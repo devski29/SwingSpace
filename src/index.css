@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-primary text-white transition-colors duration-200;
+  }
+  
+  body.light {
+    @apply bg-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-[0.08em] text-[#FFD700];
+    text-shadow: 3px 3px 0 #000,
+                -3px 3px 0 #000,
+                3px -3px 0 #000,
+                -3px -3px 0 #000,
+                0 3px 0 #000,
+                3px 0 0 #000,
+                0 -3px 0 #000,
+                -3px 0 0 #000,
+                1px 1px 0 #000,
+                -1px 1px 0 #000,
+                1px -1px 0 #000,
+                -1px -1px 0 #000;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl font-bold leading-tight;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl font-bold leading-tight;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl font-semibold leading-snug;
+  }
+  
+  h4 {
+    @apply text-xl md:text-2xl font-semibold leading-snug;
+  }
+  
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-3 rounded-md font-medium transition-all duration-200 inline-flex items-center justify-center;
+  }
+  
+  .btn-primary {
+    @apply bg-accent-gold text-primary hover:bg-accent-gold-light;
+  }
+  
+  .btn-secondary {
+    @apply bg-accent-purple text-white hover:bg-accent-purple-light;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-accent-gold text-accent-gold hover:bg-accent-gold hover:text-primary;
+  }
+  
+  .btn-ghost {
+    @apply text-white hover:text-accent-gold;
+  }
+  
+  .btn-sm {
+    @apply px-4 py-2 text-sm;
+  }
+  
+  .btn-lg {
+    @apply px-8 py-4 text-lg;
+  }
+  
+  .card {
+    @apply bg-primary-light text-white rounded-lg overflow-hidden border border-gray-800 shadow-[0_0_15px_rgba(255,215,0,0.1)] transition-all duration-300 hover:shadow-[0_0_25px_rgba(255,215,0,0.2)];
+  }
+  
+  .card-premium {
+    @apply bg-primary-light text-white rounded-lg overflow-hidden border border-accent-gold/30 shadow-[0_0_20px_rgba(255,215,0,0.15)] hover:shadow-[0_0_30px_rgba(255,215,0,0.25)];
+  }
+  
+  .input {
+    @apply bg-primary-light border border-gray-700 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent-gold/50 text-white;
+  }
+  
+  .badge {
+    @apply px-2 py-1 text-xs rounded-full font-medium inline-flex items-center;
+  }
+  
+  .badge-gold {
+    @apply bg-accent-gold text-primary;
+  }
+  
+  .badge-purple {
+    @apply bg-accent-purple text-white;
+  }
+  
+  .badge-outline {
+    @apply border border-gray-600 text-gray-300;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-primary-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-accent-gold;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-in-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
